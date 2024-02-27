@@ -3,7 +3,15 @@ function sortear(){
     let de = document.getElementById("de").value;
     let ate = document.getElementById("ate").value;
 
-    alert(`Quantidade: ${quantidade}`)
-    alert(`do número: ${de}`)
-    alert(`Até o número: ${ate}`)
-}git 
+    let numeroAleatorio = Math.random()
+    let conjuntoNumeros = Math.floor(numeroAleatorio * (ate - de + 1)+ de)
+
+    console.log(conjuntoNumeros)
+}
+
+let numeroAleatorio = math.floor(Math.random()*10)
+let conjuntoNumeros = numeroAleatorio * (ate - de + 1)+ de
+
+console.log(conjuntoNumeros)
+
+//let novoTexto = `Números sorteados até agora ${conjuntoNumeros}`
