@@ -1,17 +1,27 @@
 function sortear(){
+
+
     let quantidade = document.getElementById("quantidade").value;
     let de = document.getElementById("de").value;
     let ate = document.getElementById("ate").value;
+    let novoTexto = []
 
-    let numeroAleatorio = Math.random()
-    let conjuntoNumeros = Math.floor(numeroAleatorio * (ate - de + 1)+ de)
+    for (   let i = 0; i < quantidade; i++){
 
-    console.log(conjuntoNumeros)
+    let resultado = sortearNumeroAleatorio(de, ate)
+
+    
+    novoTexto.push(resultado)
+
+    }
+
+    document.getElementById("resultado").textContent = `Números sorteados: ${novoTexto}`
 }
 
-let numeroAleatorio = math.floor(Math.random()*10)
-let conjuntoNumeros = numeroAleatorio * (ate - de + 1)+ de
+function sortearNumeroAleatorio(de, ate){
 
-console.log(conjuntoNumeros)
+    let numeroAleatorio = Math.random()
+    let conjuntoNumeros = Math.floor(numeroAleatorio * (ate - de + 1))+ parseInt(de)
 
-//let novoTexto = `Números sorteados até agora ${conjuntoNumeros}`
+    return conjuntoNumeros
+}
