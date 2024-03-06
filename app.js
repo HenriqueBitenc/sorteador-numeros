@@ -4,10 +4,25 @@ function sortear(){
 
     //Declaração das variáveis globais
 
-let quantidade = document.getElementById("quantidade").value;
-let de = document.getElementById("de").value;
-let ate = document.getElementById("ate").value;
+let quantidade = parseInt(document.getElementById("quantidade").value);
+let de = parseInt(document.getElementById("de").value);
+let ate = parseInt(document.getElementById("ate").value);
 let novoTexto = [];
+
+if (de >= ate){
+
+    alert("Valores 'Do número' devem ser menores que os valores 'Até o número'!")
+    
+    return
+} 
+
+if (quantidade > (ate-de)){
+
+    alert("Quantidade de números sorteados excede a quantidade de números possíveis!")
+
+    return
+
+}
     
     //Iteração com base na quantidade informada.
     for (   let i = 0; i < quantidade; i++){
