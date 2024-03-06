@@ -14,13 +14,22 @@ let novoTexto = [];
 
     let resultado = sortearNumeroAleatorio(de, ate);
 
+        while(novoTexto.includes(resultado)){
+
+            resultado = sortearNumeroAleatorio(de, ate);   
+        }
+
+
     
     novoTexto.push(resultado);
 
     }
 
     // Exibe o resultado após o fim da iteração
-    document.getElementById("resultado").textContent = `Números sorteados: ${novoTexto}`;
+
+    let sorteados = document.getElementById("resultado");
+        sorteados.innerHTML = `<label class="texto__paragrafo">Números sorteados: ${novoTexto}</label>`
+
     // Reseta os campos para nova Atividade
     document.getElementById("btn-reiniciar").classList.remove("container__botao-desabilitado")
     document.getElementById("btn-reiniciar").classList.add("container__botao")
@@ -45,6 +54,7 @@ function reiniciar(){
     document.getElementById("btn-reiniciar").classList.remove("container__botao")
     document.getElementById("btn-reiniciar").classList.add("container__botao-desabilitado")
 
-    document.getElementById("resultado").textContent = `Números sorteados: Nenhum número sorteado!`;
+    let resetados = document.getElementById("resultado");
+        resetados.innerHTML = `<label class="texto__paragrafo">Números sorteados: Nenhum número sorteado!</label>`;
 
 }
